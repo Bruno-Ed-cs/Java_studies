@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="643cd5c4-311e-45e9-a038-a49c13dd2a7f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lista/Bloco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lista/Fila.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lista/Lista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/lista/Pilha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista/Bloco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista/Fila.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista/FilaPilha.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista/Lista.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista/Pilha.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista/PilhaFila.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lista_oop.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lista/Bloco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lista/Fila.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lista/Lista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/lista/Pilha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/lista/Bloco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/lista/Fila.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/lista/FilaPilha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/lista/Lista.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/lista/Pilha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/lista/PilhaFila.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/lista_oop.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/lista_oop/questoe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/questoe.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2mieEmuquemVLKtpcsE3VNcEJ9h" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/huevo/Projects/Java_studies/lista_oop/lista"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="643cd5c4-311e-45e9-a038-a49c13dd2a7f" name="Changes" comment="" />
+      <created>1727563716523</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727563716523</updated>
+    </task>
+    <servers />
+  </component>
+</project>
