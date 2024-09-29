@@ -1,173 +1,176 @@
 package uern.oop.lista;
 
-public class Lista {
+public class Lista implements List {
 
-    Bloco inicio;
+	Bloco inicio;
 
-    public Bloco addElemento(int valor,boolean posicaoIncio) {
+	public Bloco addElemento(int valor, boolean posicaoIncio) {
+		Bloco novo = null;
 
-        Bloco novo = null;
+		if (posicaoIncio == true) {
+			novo = this.addElementoInicio(valor);
+		} else {
+			novo = this.addElementoFim(valor);
+		}
 
-        if(posicaoIncio == true) {
+		return novo;
+	}
 
-            novo = this.addElementoInicio(valor);
+	public Bloco addElemento(int valor, int pos) {
+		Bloco novo = new Bloco(valor);
+		Bloco aux = this.inicio;
 
-        } else {
+		if (pos <= 0) {
+			this.addElementoInicio(valor);
+			return novo;
+		}
 
-            novo = this.addElementoFim(valor);
-        }
+		for (int i = 0; i <= pos; i++) {
+			if (i == pos - 1) {
+				novo.prox = aux.prox;
+				aux.prox = novo;
+				break;
+			}
 
-        return novo;
-    }
+			if (aux.prox == null) {
+				aux.prox = new Bloco();
+			}
 
+			if (aux.prox != null) {
+				aux = aux.prox;
+			}
+		}
 
-    public Bloco removerElementoFim() {
+		return novo;
+	}
 
-        Bloco result = null;
+	public Bloco removerElementoFim() {
+		Bloco result = null;
 
-        if(this.isVazia()) {
-            return result;
-        }
+		if (this.isVazia()) {
+			return result;
+		}
 
-        if(this.tamanho() == 1) {
-            //this.inicio = null;
-            result = this.removerElementoInicio();
-        } else {
+		if (this.tamanho() == 1) {
+			//this.inicio = null;
+			result = this.removerElementoInicio();
+		} else {
+			Bloco target = this.localizarBloco(this.tamanho() - 1);
 
-            Bloco target = this.localizarBloco(this.tamanho()-1);
-    
-            result = target.prox;
-            target.prox = null;
-        }
+			result = target.prox;
+			target.prox = null;
+		}
 
-        return result;
-    }
+		return result;
+	}
 
-    public Bloco removerElementoInicio() {
+	public Bloco removerElementoInicio() {
+		Bloco result = this.inicio;
+		if (!this.isVazia()) {
+			this.inicio = this.inicio.prox;
+		}
 
-        Bloco result = this.inicio;
-        if(!this.isVazia()) {
+		return result;
+	}
 
-            this.inicio = this.inicio.prox;
-        }
+	public boolean isVazia() {
+		return this.inicio == null;
+	}
 
-        return result;
-    }
+	private Bloco addElementoInicio(int valor) {
+		Bloco novo = new Bloco();
+		novo.valor = valor;
 
-    public boolean isVazia() {
+		novo.prox = this.inicio;
+		this.inicio = novo;
 
-        return this.inicio == null;
-    }
+		return novo;
+	}
 
-    private Bloco addElementoInicio(int valor) {
+	private Bloco addElementoFim(int valor) {
+		Bloco novo = null;
 
-        Bloco novo = new Bloco();
-        novo.valor = valor;
-        
-        novo.prox = this.inicio;
-        this.inicio = novo;
+		Bloco fim = this.localizarBloco(this.tamanho());
 
-        return novo;
-    }
+		if (fim == null) {
+			novo = this.addElementoInicio(valor);
+		} else {
+			novo = new Bloco();
+			novo.valor = valor;
 
-    private Bloco addElementoFim(int valor) {
+			fim.prox = novo;
+		}
 
-        Bloco novo = null;
+		return novo;
+	}
 
-        Bloco fim = this.localizarBloco(this.tamanho());
+	public Bloco localizarBloco(int pos) {
+		Bloco aux = this.inicio;
+		int cont = 0;
 
-        if(fim == null) {
+		while (aux != null && cont < pos - 1) {
+			cont++;
+			aux = aux.prox;
+		}
 
-            novo = this.addElementoInicio(valor);
-        } else {
+		return aux;
+	}
 
-            novo = new Bloco();
-            novo.valor = valor;
-    
-            fim.prox = novo; 
-        }
+	public int tamanho() {
+		Bloco aux = this.inicio;
+		int cont = 0;
 
-        return novo;
-    }
+		while (aux != null) {
+			cont++;
+			aux = aux.prox;
+		}
 
-    public Bloco localizarBloco(int pos) {
+		return cont;
+	}
 
-        Bloco aux = this.inicio;
-        int cont =0;
+	public Lista copia() {
+		Lista saida = new Lista();
 
-        while(aux!= null && cont < pos -1) {
+		saida.inicio = copia(this.inicio);
 
-            cont++;
-            aux = aux.prox;
-        }
+		return saida;
+	}
 
-        return aux;
-    }
+	public void print() {
+		System.out.print("Lista= ");
 
-    public int tamanho() {
+		for (int i = 1; i <= this.tamanho(); i++) {
+			System.out.print(this.localizarBloco(i).valor + " ");
+		}
 
-        Bloco aux = this.inicio;
-        int cont =0;
+		System.out.print("\n");
+	}
 
-        while(aux!= null) {
+	public Lista inverte() {
+		Lista invertida = new Lista();
 
-            cont++;
-            aux = aux.prox;
-        }
+		for (int i = this.tamanho(); i > 0; i--) {
+			invertida.addElementoFim(this.localizarBloco(i).valor);
+		}
 
-        return cont;
-    }
+		return invertida;
+	}
 
-    public Lista copia()
-    {
-        Lista saida = new Lista();
+	private static Bloco copia(Bloco bloco) {
+		if (bloco.prox != null) {
+			Bloco aux = new Bloco();
+			aux.valor = bloco.valor;
+			aux.prox = copia(bloco.prox);
 
-        saida.inicio = copia(this.inicio);
+			return aux;
+		} else {
+			return bloco;
+		}
+	}
 
-        return saida;
-
-    }
-
-    public void print()
-    {
-        System.out.print("Lista= ");
-
-        for (int i = 1; i <= this.tamanho(); i++)
-        {
-            System.out.print(this.localizarBloco(i).valor + " ");
-        }
-
-        System.out.print("\n");
-    }
-
-    public Lista inverte()
-    {
-        Lista invertida = new Lista();
-
-        for (int i = this.tamanho(); i > 0; i--)
-        {
-            invertida.addElementoFim(this.localizarBloco(i).valor);
-        }
-
-        return invertida;
-
-    }
-
-    private static Bloco copia(Bloco bloco)
-    {
-
-        if (bloco.prox != null)
-        {
-            Bloco aux = new Bloco();
-            aux.valor = bloco.valor;
-            aux.prox = copia(bloco.prox);
-
-            return aux;
-
-        } else
-        {
-            return bloco;
-        }
-    }
-
+	@Override
+	public Bloco removerElemento() {
+		this.removerElementoInicio();
+		return this.localizarBloco(this.tamanho() - 1);
+	}
 }
