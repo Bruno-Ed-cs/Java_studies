@@ -11,24 +11,30 @@ public class Fila {
 
     }
 
-    public void pop()
+    public Bloco pop()
     {
 
-        this.lista.removerElementoFim();
+        return this.lista.removerElementoFim();
 
     }
 
     public Bloco fim()
     {
 
-        return lista.localizarBloco(lista.tamanho() -1);
+        Bloco fim = lista.localizarBloco(lista.tamanho() -1);
+        return fim;
+    }
+
+    public Bloco inicio()
+    {
+        return this.lista.inicio;
     }
 
     public Pilha getPilha()
     {
         Pilha pilha= new Pilha();
 
-        pilha.lista = this.lista.copia();
+        pilha.lista = this.lista.clone();
 
         return pilha;
 
@@ -38,7 +44,7 @@ public class Fila {
     {
         System.out.print("Fila = ");
 
-        for (int i = 1; i <= this.lista.tamanho(); i++)
+        for (int i = 0; i < this.lista.tamanho(); i++)
         {
             System.out.print(this.lista.localizarBloco(i).valor + " ");
         }

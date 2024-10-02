@@ -2,10 +2,10 @@ package uern.oop.lista;
 
 public class Lista implements List {
 
-	Bloco inicio;
+	Bloco inicio = null;
 
 	public Bloco addElemento(int valor, boolean posicaoIncio) {
-		Bloco novo = null;
+		Bloco novo;
 
 		if (posicaoIncio == true) {
 			novo = this.addElementoInicio(valor);
@@ -55,7 +55,7 @@ public class Lista implements List {
 			//this.inicio = null;
 			result = this.removerElementoInicio();
 		} else {
-			Bloco target = this.localizarBloco(this.tamanho() - 1);
+			Bloco target = this.localizarBloco(this.tamanho() -1);
 
 			result = target.prox;
 			target.prox = null;
@@ -78,8 +78,7 @@ public class Lista implements List {
 	}
 
 	private Bloco addElementoInicio(int valor) {
-		Bloco novo = new Bloco();
-		novo.valor = valor;
+		Bloco novo = new Bloco(valor);
 
 		novo.prox = this.inicio;
 		this.inicio = novo;
@@ -90,7 +89,7 @@ public class Lista implements List {
 	private Bloco addElementoFim(int valor) {
 		Bloco novo = null;
 
-		Bloco fim = this.localizarBloco(this.tamanho());
+		Bloco fim = this.localizarBloco(this.tamanho() -1);
 
 		if (fim == null) {
 			novo = this.addElementoInicio(valor);
@@ -106,61 +105,80 @@ public class Lista implements List {
 
 	public Bloco localizarBloco(int pos) {
 		Bloco aux = this.inicio;
-		int cont = 0;
 
-		while (aux != null && cont < pos - 1) {
-			cont++;
-			aux = aux.prox;
+		for (int i = 0; i < pos; i++)
+		{
+			if (aux.prox != null)
+			{
+				aux = aux.prox;
+			}
+
 		}
-
 		return aux;
 	}
 
 	public int tamanho() {
 		Bloco aux = this.inicio;
-		int cont = 0;
+		int count = 0;
 
-		while (aux != null) {
-			cont++;
-			aux = aux.prox;
+		while (true)
+		{
+			count++;
+
+			if (aux != null && aux.prox != null)
+			{
+				aux = aux.prox;
+			} else
+			{
+				break;
+			}
 		}
 
-		return cont;
+		return count;
 	}
 
-	public Lista copia() {
+	public Lista clone() {
 		Lista saida = new Lista();
 
-		saida.inicio = copia(this.inicio);
+		saida.inicio = clone(this.inicio);
 
 		return saida;
 	}
 
 	public void print() {
-		System.out.print("Lista= ");
+		Bloco aux = this.inicio;
+		System.out.print("Lista = { ");
 
-		for (int i = 1; i <= this.tamanho(); i++) {
-			System.out.print(this.localizarBloco(i).valor + " ");
+		for (int i = 0; i < this.tamanho(); i++) {
+
+			System.out.print(aux.valor + " ");
+			if (aux.prox != null)
+			{
+				aux = aux.prox;
+			} else
+			{
+				break;
+			}
 		}
 
-		System.out.print("\n");
+		System.out.print("}\n");
 	}
 
 	public Lista inverte() {
 		Lista invertida = new Lista();
 
-		for (int i = this.tamanho(); i > 0; i--) {
+		for (int i = this.tamanho() -1; i >= 0; i--) {
 			invertida.addElementoFim(this.localizarBloco(i).valor);
 		}
 
 		return invertida;
 	}
 
-	private static Bloco copia(Bloco bloco) {
+	private static Bloco clone(Bloco bloco) {
 		if (bloco.prox != null) {
 			Bloco aux = new Bloco();
 			aux.valor = bloco.valor;
-			aux.prox = copia(bloco.prox);
+			aux.prox = clone(bloco.prox);
 
 			return aux;
 		} else {
@@ -173,4 +191,94 @@ public class Lista implements List {
 		this.removerElementoInicio();
 		return this.localizarBloco(this.tamanho() - 1);
 	}
+
+	public Bloco removerElemento(int pos)
+	{
+
+		Bloco aux;
+		if (pos <= 0)
+		{
+			aux = this.removerElementoInicio();
+			return aux;
+		} else if (pos == this.tamanho() -1)
+		{
+			aux = this.removerElementoFim();
+			return aux;
+		}
+
+		aux = this.localizarBloco(pos -1);
+
+		Bloco target = this.localizarBloco(pos);
+
+		aux.prox = target.prox;
+
+		return aux;
+
+	}
+
+	public Lista concatena(Lista l2)
+	{
+		Lista novo = new Lista();
+		Bloco aux = this.inicio;
+
+		while (aux.prox != null)
+		{
+			novo.addElemento(aux.valor, false);
+			aux = aux.prox;
+		}
+		novo.addElemento(aux.valor, false);
+
+		aux = l2.inicio;
+
+		while (aux.prox != null)
+		{
+			novo.addElemento(aux.valor, false);
+			aux = aux.prox;
+		}
+		novo.addElemento(aux.valor, false);
+
+		return novo;
+	}
+
+	public void removeDuplicados()
+	{
+
+		for (int i = 0; i < this.tamanho(); i++)
+		{
+			Bloco aux = this.localizarBloco(i);
+
+			for (int j = i +1; j < this.tamanho(); j++)
+			{
+				Bloco ajud = this.localizarBloco(j);
+
+				if (aux.valor == ajud.valor)
+				{
+					this.removerElemento(j);
+				}
+			}
+
+
+		}
+
+	}
+
+	public Lista localizarMaior(int valor)
+	{
+		Bloco aux;
+		Lista maiores = new Lista();
+
+		for (int i = 0; i < this.tamanho(); i++)
+		{
+			aux = this.localizarBloco(i);
+			if (aux.valor > valor)
+			{
+				maiores.addElementoInicio(aux.valor);
+			}
+
+		}
+
+		return maiores;
+	}
+
 }
+

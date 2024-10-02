@@ -25,7 +25,7 @@ public class Pilha {
     {
         Fila fila = new Fila();
 
-        fila.lista = this.lista.copia();
+        fila.lista = this.lista.clone();
 
         return fila;
 
@@ -49,7 +49,7 @@ public class Pilha {
     {
         System.out.print("Pilha = ");
 
-        for (int i = 1; i <= this.lista.tamanho(); i++)
+        for (int i = 0; i < this.lista.tamanho(); i++)
         {
             System.out.print(this.lista.localizarBloco(i).valor + " ");
         }

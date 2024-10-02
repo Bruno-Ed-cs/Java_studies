@@ -29,14 +29,7 @@ public class FilaPilha
 
     public void print()
     {
-        System.out.print("Fila = ");
-
-        for (int i = 1; i < pilha.lista.tamanho(); i++)
-        {
-            System.out.print(pilha.lista.localizarBloco(i).valor + " ");
-        }
-
-        System.out.print("\n");
+        this.pilha.lista.print();
     }
 
     private void invert()

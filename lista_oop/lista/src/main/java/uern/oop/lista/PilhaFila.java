@@ -35,30 +35,15 @@ public class PilhaFila
 
     public void print()
     {
-        System.out.print("Pilha = ");
-
-        for (int i = 1; i < fila.lista.tamanho(); i++)
-        {
-            System.out.print(fila.lista.localizarBloco(i).valor + " ");
-        }
-
-        System.out.print("\n");
+        this.fila.lista.print();
     }
 
     private void invert()
     {
-        if (!this.fila.lista.isVazia())
-        {
-            int value = this.fila.fim().valor;
-            this.fila.pop();
 
-            invert();
+        Lista invertida = this.fila.lista.inverte();
 
-            this.fila.push(value);
-        } else
-        {
-            return;
-        }
+        this.fila.lista = invertida;
 
     }
 
