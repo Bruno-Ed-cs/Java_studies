@@ -16,12 +16,12 @@ Entrega: até 11/10/2024
     6. Defina um método em Fila que retorna uma Pilha equivalente.
     7. Na classe Lista, implemente o método inverte que retorna uma Lista com os elementos
     em ordem invertida.
-	8. Implemente em Lista o método para addElemento(int valor, int pos) que adiciona um
-	elemento na posição especificada. A posição pode ou não existir.
-	9. Implemente uma classe ListaDupla que implementa o duplo encadeamento dos blocos.
-	Sendo assim o Bloco precisa ser também modificado.
-	10. Implemente a Lista com array ao invés de uma lista encadeada. No array, blocos
-	também serão adicionados.
+    8. Implemente em Lista o método para addElemento(int valor, int pos) que adiciona um
+    elemento na posição especificada. A posição pode ou não existir.
+    9. Implemente uma classe ListaDupla que implementa o duplo encadeamento dos blocos.
+    Sendo assim o Bloco precisa ser também modificado.
+    10. Implemente a Lista com array ao invés de uma lista encadeada. No array, blocos
+    também serão adicionados.
     11. Implemente a classe ListaRecursiva que define métodos recursivos de localizar e de
     tamanha. Lembre-se que os métodos devem ser declarados como private para não
     ficarem disponíveis para o usuário programador.
@@ -40,11 +40,12 @@ Entrega: até 11/10/2024
     17. Implemente o método “removeElemento(int pos)” na classe Lista. Esse método deve
     remover o elemento na posição especificada.
     18. Adicione o método “localizarMaior(int valor)” na classe Lista. Esse método deve retornar
-    uma Lista com todos os blocos que contenham um valor maior do que o valor passado .
+    uma Lista com todos os blocos que contenham um valor maior do que o valor passado.
 19. Implemente um jogo de baralho com dois decks, um para cartas jogador. O jogador
 vencedor é o que retira as 5 primeiras cartas com a maior soma.
-20. Tipicamente os jogos da velha são implementados através de matrizes, porém o desafio
-aqui é implementar utilizando uma única lista.
+    20. Tipicamente os jogos da velha são implementados através de matrizes, porém o desafio
+    aqui é implementar utilizando uma única lista.
+
 
 Questão especial:
 21. Implemente as classes “Aluno” com os atributos “nome” e “matrícula” e “Disciplina” com

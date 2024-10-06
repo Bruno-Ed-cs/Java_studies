@@ -5,16 +5,20 @@ import uern.oop.lista.*;
 public class Main {
 
 	public static void main(String[] args) {
-		Lista list = new Lista();
+		ListaG<Integer> list = new ListaG<Integer>();
 		Pilha pilha = new Pilha();
 		FilaPilha fila = new FilaPilha();
 		PilhaFila stack = new PilhaFila();
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++) 
+		{
 			fila.push(i);
 			stack.push(i);
 			list.addElemento(i, true);
 		}
+		
+
+
 
 		pilha.push(20);
 		pilha.push(33);
@@ -56,7 +60,7 @@ public class Main {
 		overflow.print();
 
 		list.print();
-		Lista numerosi = list.inverte();
+		ListaG<Integer> numerosi = list.inverte();
 		numerosi.print();
 
 		list.removerElementoFim();
