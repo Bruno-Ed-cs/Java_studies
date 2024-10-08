@@ -1,7 +1,12 @@
+/home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/baralho/Main.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/calculadora/Main.java
+/home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/escola/Aluno.java
+/home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/escola/Disciplina.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/escola/Main.java
+/home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/escola/Turma.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/Bloco.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/BlocoDuplo.java
+/home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/BlocoG.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/BlocoP.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/Fila.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/FilaPilha.java
@@ -10,6 +15,7 @@
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/Lista.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/ListaArray.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/ListaDupla.java
+/home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/ListaG.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/ListaRecursiva.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/Pilha.java
 /home/huevo/Projects/Java_studies/lista_oop/lista/src/main/java/uern/oop/lista/PilhaFila.java

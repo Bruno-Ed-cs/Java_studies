@@ -52,10 +52,10 @@ public class ListaG<T> {
 		}
 
 		if (this.tamanho() == 1) {
-			//this.inicio = null;
 			result = this.removerElementoInicio();
+
 		} else {
-			BlocoG<T> target = this.localizarBloco(this.tamanho() -1);
+			BlocoG<T> target = this.localizarBloco(this.tamanho() -2);
 
 			result = target.prox;
 			target.prox = null;
@@ -187,8 +187,7 @@ public class ListaG<T> {
 	}
 
 	public BlocoG<T> removerElemento() {
-		this.removerElementoInicio();
-		return this.localizarBloco(this.tamanho() - 1);
+		return this.removerElementoInicio();
 	}
 
 	public BlocoG<T> removerElemento(int pos)
@@ -211,7 +210,7 @@ public class ListaG<T> {
 
 		aux.prox = target.prox;
 
-		return aux;
+		return target;
 
 	}
 

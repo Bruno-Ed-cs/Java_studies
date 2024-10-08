@@ -55,10 +55,12 @@ public class Lista implements List {
 			//this.inicio = null;
 			result = this.removerElementoInicio();
 		} else {
-			Bloco target = this.localizarBloco(this.tamanho() -1);
+			Bloco target = this.localizarBloco(this.tamanho() -2);
 
 			result = target.prox;
 			target.prox = null;
+
+			return result;
 		}
 
 		return result;
@@ -105,14 +107,8 @@ public class Lista implements List {
 
 	public Bloco localizarBloco(int pos) {
 		Bloco aux = this.inicio;
-
-		for (int i = 0; i < pos; i++)
-		{
-			if (aux.prox != null)
-			{
-				aux = aux.prox;
-			}
-
+		for (int i = 0; i < pos && aux != null; i++) {
+			aux = aux.prox;
 		}
 		return aux;
 	}
@@ -120,6 +116,11 @@ public class Lista implements List {
 	public int tamanho() {
 		Bloco aux = this.inicio;
 		int count = 0;
+
+		if (aux == null)
+		{
+			return 0;
+		}	
 
 		while (true)
 		{
@@ -194,6 +195,11 @@ public class Lista implements List {
 
 	public Bloco removerElemento(int pos)
 	{
+
+		if (this.isVazia())
+		{
+			return null;
+		}
 
 		Bloco aux;
 		if (pos <= 0)

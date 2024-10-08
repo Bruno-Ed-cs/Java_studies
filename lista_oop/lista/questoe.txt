@@ -41,17 +41,17 @@ Entrega: até 11/10/2024
     remover o elemento na posição especificada.
     18. Adicione o método “localizarMaior(int valor)” na classe Lista. Esse método deve retornar
     uma Lista com todos os blocos que contenham um valor maior do que o valor passado.
-19. Implemente um jogo de baralho com dois decks, um para cartas jogador. O jogador
-vencedor é o que retira as 5 primeiras cartas com a maior soma.
+    19. Implemente um jogo de baralho com dois decks, um para cartas jogador. O jogador
+    vencedor é o que retira as 5 primeiras cartas com a maior soma.
     20. Tipicamente os jogos da velha são implementados através de matrizes, porém o desafio
     aqui é implementar utilizando uma única lista.
 
 
 Questão especial:
-21. Implemente as classes “Aluno” com os atributos “nome” e “matrícula” e “Disciplina” com
-o atributo nome. Implemente também a classe “Turma” com os atributos “alunos”,
-“disciplina” e “código”. A lista de alunos deve ser implementada com a classe Lista que
-vem sendo desenvolvida até então.
-22. Para complementar a questão 21, implemente uma solução para o cadastro das notas
-dos alunos. Lembre-se, sempre que houver a necessidade de uso de lista, utilize a
-classe Lista que vem sendo desenvolvida até então
+    21. Implemente as classes “Aluno” com os atributos “nome” e “matrícula” e “Disciplina” com
+    o atributo nome. Implemente também a classe “Turma” com os atributos “alunos”,
+    “disciplina” e “código”. A lista de alunos deve ser implementada com a classe Lista que
+    vem sendo desenvolvida até então.
+    22. Para complementar a questão 21, implemente uma solução para o cadastro das notas
+    dos alunos. Lembre-se, sempre que houver a necessidade de uso de lista, utilize a
+    classe Lista que vem sendo desenvolvida até então
