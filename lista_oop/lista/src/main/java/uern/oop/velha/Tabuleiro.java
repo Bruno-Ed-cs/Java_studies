@@ -1,8 +1,6 @@
 package uern.oop.velha;
 import uern.oop.lista.*;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Tabuleiro{

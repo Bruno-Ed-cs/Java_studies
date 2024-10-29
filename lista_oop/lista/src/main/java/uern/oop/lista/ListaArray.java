@@ -5,7 +5,8 @@ public class ListaArray implements List {
 	Bloco[] array = {};
 
 	@Override
-	public Bloco addElemento(int value, boolean posicaoInicio) {
+	public Bloco addElemento(int value, boolean posicaoInicio) 
+	{
 		Bloco novo = new Bloco(value);
 		if (posicaoInicio) {
 			this.resize(this.tamanho() + 1);
@@ -25,7 +26,8 @@ public class ListaArray implements List {
 	}
 
 	@Override
-	public Bloco removerElemento() {
+	public Bloco removerElemento() 
+	{
 		Bloco deleted = this.array[0];
 		this.array[0] = null;
 
@@ -38,7 +40,8 @@ public class ListaArray implements List {
 	}
 
 	@Override
-	public void print() {
+	public void print() 
+	{
 		System.out.print("ListaArray = { ");
 		for (int i = 0; i < this.tamanho(); i++) {
 			System.out.print(this.array[i].valor + " ");
@@ -47,16 +50,19 @@ public class ListaArray implements List {
 	}
 
 	@Override
-	public Bloco localizarBloco(int index) {
+	public Bloco localizarBloco(int index) 
+	{
 		return this.array[index];
 	}
 
 	@Override
-	public int tamanho() {
+	public int tamanho() 
+	{
 		return this.array.length;
 	}
 
-	private void resize(int size) {
+	private void resize(int size) 
+	{
 		Bloco[] novo = new Bloco[size];
 
 		for (int i = 0; i < novo.length; i++) {

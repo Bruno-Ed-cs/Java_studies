@@ -1,14 +1,18 @@
 package uern.oop.lista;
 
-public class ListaRecursiva extends Lista {
+public class ListaRecursiva extends Lista 
+{
+
 
 	@Override
-	public Bloco localizarBloco(int pos) {
+	public Bloco localizarBloco(int pos) 
+	{
 		return ListaRecursiva.localizar(pos, this.inicio, 0);
 	}
 
 	@Override
-	public int tamanho() {
+	public int tamanho() 
+	{
 		if (this.inicio == null)
 		{
 			return 0;
@@ -18,7 +22,8 @@ public class ListaRecursiva extends Lista {
 		}
 	}
 
-	private static Bloco localizar(int pos, Bloco bloco, int atual) {
+	private static Bloco localizar(int pos, Bloco bloco, int atual) 
+	{
 		if (atual != pos) {
 			if (bloco.prox != null) {
 				return ListaRecursiva.localizar(pos, bloco.prox, atual +1);
@@ -30,7 +35,8 @@ public class ListaRecursiva extends Lista {
 		return bloco;
 	}
 
-	private static int tamanho(int size, Bloco bloco) {
+	private static int tamanho(int size, Bloco bloco) 
+	{
 		if (bloco.prox != null) {
 			return ListaRecursiva.tamanho(size +1, bloco.prox);
 		}

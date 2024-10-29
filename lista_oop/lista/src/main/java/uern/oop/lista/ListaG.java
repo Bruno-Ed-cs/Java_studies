@@ -1,42 +1,52 @@
 package uern.oop.lista;
 
-public class ListaG<T> {
+public class ListaG<T> 
+{
 
 	BlocoG<T> inicio = null;
 
-	public BlocoG<T> addElemento(T valor, boolean posicaoIncio) {
+	public BlocoG<T> addElemento(T valor, boolean posicaoIncio) 
+	{
 		BlocoG<T> novo;
 
-		if (posicaoIncio == true) {
+		if (posicaoIncio == true) 
+		{
 			novo = this.addElementoInicio(valor);
-		} else {
+		} else 
+		{
 			novo = this.addElementoFim(valor);
 		}
 
 		return novo;
 	}
 
-	public BlocoG<T> addElemento(T valor, int pos) {
+	public BlocoG<T> addElemento(T valor, int pos) 
+	{
 		BlocoG<T> novo = new BlocoG<T>(valor);
 		BlocoG<T> aux = this.inicio;
 
-		if (pos <= 0) {
+		if (pos <= 0) 
+		{
 			this.addElementoInicio(valor);
 			return novo;
 		}
 
-		for (int i = 0; i <= pos; i++) {
-			if (i == pos - 1) {
+		for (int i = 0; i <= pos; i++) 
+		{
+			if (i == pos - 1) 
+			{
 				novo.prox = aux.prox;
 				aux.prox = novo;
 				break;
 			}
 
-			if (aux.prox == null) {
+			if (aux.prox == null) 
+			{
 				aux.prox = new BlocoG<T>();
 			}
 
-			if (aux.prox != null) {
+			if (aux.prox != null) 
+			{
 				aux = aux.prox;
 			}
 		}
@@ -44,17 +54,21 @@ public class ListaG<T> {
 		return novo;
 	}
 
-	public BlocoG<T> removerElementoFim() {
+	public BlocoG<T> removerElementoFim() 
+	{
 		BlocoG<T> result = null;
 
-		if (this.isVazia()) {
+		if (this.isVazia()) 
+		{
 			return result;
 		}
 
-		if (this.tamanho() == 1) {
+		if (this.tamanho() == 1) 
+		{
 			result = this.removerElementoInicio();
 
-		} else {
+		} else 
+		{
 			BlocoG<T> target = this.localizarBloco(this.tamanho() -2);
 
 			result = target.prox;
@@ -64,20 +78,24 @@ public class ListaG<T> {
 		return result;
 	}
 
-	public BlocoG<T> removerElementoInicio() {
+	public BlocoG<T> removerElementoInicio() 
+	{
 		BlocoG<T> result = this.inicio;
-		if (!this.isVazia()) {
+		if (!this.isVazia()) 
+		{
 			this.inicio = this.inicio.prox;
 		}
 
 		return result;
 	}
 
-	public boolean isVazia() {
+	public boolean isVazia() 
+	{
 		return this.inicio == null;
 	}
 
-	private BlocoG<T> addElementoInicio(T valor) {
+	private BlocoG<T> addElementoInicio(T valor) 
+	{
 		BlocoG<T> novo = new BlocoG<T>(valor);
 
 		novo.prox = this.inicio;
@@ -86,14 +104,17 @@ public class ListaG<T> {
 		return novo;
 	}
 
-	private BlocoG<T> addElementoFim(T valor) {
+	private BlocoG<T> addElementoFim(T valor) 
+	{
 		BlocoG<T> novo = null;
 
 		BlocoG<T> fim = this.localizarBloco(this.tamanho() -1);
 
-		if (fim == null) {
+		if (fim == null) 
+		{
 			novo = this.addElementoInicio(valor);
-		} else {
+		} else 
+		{
 			novo = new BlocoG<T>();
 			novo.valor = valor;
 
@@ -103,7 +124,8 @@ public class ListaG<T> {
 		return novo;
 	}
 
-	public BlocoG<T> localizarBloco(int pos) {
+	public BlocoG<T> localizarBloco(int pos) 
+	{
 		BlocoG<T> aux = this.inicio;
 
 		for (int i = 0; i < pos; i++)
@@ -117,7 +139,8 @@ public class ListaG<T> {
 		return aux;
 	}
 
-	public int tamanho() {
+	public int tamanho() 
+	{
 		BlocoG<T> aux = this.inicio;
 		int count = 0;
 
@@ -137,7 +160,8 @@ public class ListaG<T> {
 		return count;
 	}
 
-	public ListaG<T> clone() {
+	public ListaG<T> clone() 
+	{
 		ListaG<T> saida = new ListaG<T>();
 
 		saida.inicio = clone(this.inicio);
@@ -145,11 +169,13 @@ public class ListaG<T> {
 		return saida;
 	}
 
-	public void print() {
+	public void print() 
+	{
 		BlocoG<T> aux = this.inicio;
 		System.out.print("Lista = { ");
 
-		for (int i = 0; i < this.tamanho(); i++) {
+		for (int i = 0; i < this.tamanho(); i++) 
+		{
 
 			System.out.print(aux.valor + " ");
 			if (aux.prox != null)
@@ -164,29 +190,35 @@ public class ListaG<T> {
 		System.out.print("}\n");
 	}
 
-	public ListaG<T> inverte() {
+	public ListaG<T> inverte() 
+	{
 		ListaG<T> invertida = new ListaG<T>();
 
-		for (int i = this.tamanho() -1; i >= 0; i--) {
+		for (int i = this.tamanho() -1; i >= 0; i--) 
+		{
 			invertida.addElementoFim(this.localizarBloco(i).valor);
 		}
 
 		return invertida;
 	}
 
-	private static <T> BlocoG<T> clone(BlocoG<T> bloco) {
-		if (bloco.prox != null) {
+	private static <T> BlocoG<T> clone(BlocoG<T> bloco) 
+	{
+		if (bloco.prox != null) 
+		{
 			BlocoG<T> aux = new BlocoG<T>();
 			aux.valor = bloco.valor;
 			aux.prox = clone(bloco.prox);
 
 			return aux;
-		} else {
+		} else 
+		{
 			return bloco;
 		}
 	}
 
-	public BlocoG<T> removerElemento() {
+	public BlocoG<T> removerElemento() 
+	{
 		return this.removerElementoInicio();
 	}
 

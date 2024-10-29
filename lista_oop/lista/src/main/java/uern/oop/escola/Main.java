@@ -2,7 +2,6 @@ package uern.oop.escola;
 
 import uern.oop.lista.*;
 import java.util.Scanner;
-import java.awt.Insets;
 import java.util.Random;
 
 public class Main {
