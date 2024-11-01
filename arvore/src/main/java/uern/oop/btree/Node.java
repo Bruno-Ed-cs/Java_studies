@@ -19,5 +19,16 @@ public class Node
 
     }
 
+    public Boolean isEqual(Node target) {
+
+        if (target.value == this.value && target.left == this.left && target.right == this.right) {
+
+            return true;
+
+        } else {
+
+            return false;
+        }
+    }
 
 }

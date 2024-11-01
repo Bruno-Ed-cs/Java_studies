@@ -1,5 +1,8 @@
 package uern.oop;
 import uern.oop.singles.Singleton;
+
+import java.net.SocketTimeoutException;
+
 import uern.oop.btree.*;
 import uern.oop.lista.*;
 
@@ -8,13 +11,13 @@ import uern.oop.lista.*;
  */
 public class App 
 {
-    public static void main(String[] args) 
-{
+    public static void main(String[] args) {
+
         System.out.println("Hello World!");
 
         Singleton single = Singleton.getInstace();
 
-        System.out.println(single.test);
+        System.out.println(Singleton.getTest());
 
         BTree flora = new BTree(5);
 
@@ -50,6 +53,43 @@ public class App
         flora.print();
 
         flora.addLista(numeros);
+
+        flora.print();
+
+        System.out.println(flora.getHeight());
+        System.out.println(flora.numNo());
+        Integer arr[] = {69, 4, 6, 10};
+        ListaG<Node> querry = flora.getArrayNodes(arr);
+
+        querry.print();
+
+        querry = flora.getLeaves();
+
+        querry.print();
+
+        System.out.println(querry.localizarBloco(0).valor.value);
+
+        flora.removeNode(querry.localizarBloco(0).valor);
+        flora.print();
+
+        flora.removeNode(flora.root);
+
+        flora.print();
+
+        flora.addLista(numeros);
+        flora.print();
+
+        BTree fauna = new BTree(20);
+
+        fauna.addLista(numeros);
+
+        fauna.print();
+
+        flora.concat(fauna, flora.root, true);
+
+        flora.print();
+
+        flora.removeSub(flora.root, false);
 
         flora.print();
     }

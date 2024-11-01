@@ -1,0 +1,59 @@
+Universidade do Estado do Rio Grande do Norte
+Departamento de Informática
+Curso de Ciência da Computação
+Lista de atividades para a disciplina Lab. Estrutura de Dados
+Prof. Antônio Oliveira Filho
+Monitor: João Marcelo Nunes de Souza
+
+
+Data: 30/10/2024
+Entrega: até 10/11/2024
+
+	1. Represente uma árvore binária em classes. Assim como a classe Lista tem um atributo
+	início do tipo Bloco, a classe Tree tem um atributo raiz do tipo Node.
+
+	2. Adicione o método addNo. Esse método tem os parâmetros dir que é booleano, int
+	valor, que é o valor que vai ser adicionado, refNo que é o nó no qual o novo nó será
+	adicionado.
+
+	3. Adicione o método locacalizarNoIncompleto que retorna um nó incompleto através de
+	uma descida randômica. Nó incompleto é um nó que não tem pelos 1 (um) nó filho.
+	Deve ser desenvolvido um método público e um priva recursivo.
+
+	4. Adicione o método altura que retorna a altura da árvore.
+
+	5. Adicione o método addLista() que recebe uma lista como parâmetro e utilizando o
+	método addNo combinado com o localizarNoIncompleto, insere todos os valores da
+	Lista na árvore.
+
+	6. Adicione o método numNo que retorna o número total de nós da árvore.
+
+	7. Adicione um método que retorna uma lista com todos os nós da árvore que têm um
+	dado array de valores.
+
+	8. Adicione um método que retorna uma lista com todos os nós folhas da árvore.
+
+	9. Adicione um método que remove um nó passado como parâmetro.
+
+	10. Adicione um método que recebe uma árvore como parâmetro e a “concatena” a um nó
+	especificado.
+
+	11. Adicione um método que remove a subárvore de um nó especificado.
+
+
+Questões Especiais:
+
+12. Crie uma árvore que tem um atributo especial do tipo Criteria. Criteria uma classe
+abstrata que tem um único método abstrato denominado apply. Esse método recebe um
+nó de referência e um valor e retorna um nó filho do nó referência caso haja. Crie duas
+classes que herdam da classe Criteria. Uma classe deve implementar o apply com o
+critério clássico que é o de que o nó retornado será o da esquerda se o valor passado
+for menor que o valor contido no nó. A outra classe deve implementar uma abordagem
+contrária.
+
+13. Adicione o atributo peso no nó. Esse atributo vai apoiar a decisão de descida na árvore.
+Implemente a classe Neuro que herda de Criteria. Essa nova classe se comporta como
+um neurônio artificial na medida em que utiliza o resultado de uma operação entre o
+valor e o peso para decidir se retorna o nó direito ou esquerdo.
+
+14. Representa o diagrama de classes da questão 13.

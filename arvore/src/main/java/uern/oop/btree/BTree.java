@@ -1,5 +1,6 @@
 package uern.oop.btree;
 import java.util.Random;
+
 import uern.oop.lista.*;
 
 public class BTree {
@@ -18,12 +19,52 @@ public class BTree {
         this.root = new Node(initial);
     }
 
+
     public void addBlind(Integer value) {
 
 
         BTree.addBlind(value, this.root);
 
     }
+
+    public Integer getHeight() {
+
+        return BTree.getHeight(this.root);
+        
+    }
+
+    private static Integer getHeight(Node no) {
+
+        if (no == null) { 
+
+            return 0;
+        }
+
+        Integer dir = 0;
+        Integer esq = 0;
+
+        if (no.left != null) {
+
+            esq = BTree.getHeight(no.left);
+        }
+
+        if (no.right != null) {
+
+            dir = BTree.getHeight(no.right);
+        }
+
+        if (dir > esq) {
+
+            return dir +1;
+        } else {
+
+            return esq +1;
+        }
+
+
+        
+    }
+
 
     private static int addBlind(Integer value, Node target) {
 
@@ -148,7 +189,14 @@ public class BTree {
 
     public void addLista(Lista list){
 
-        for (int i = 0; i < list.tamanho(); i++) {
+        int i = 0;
+        if (this.root == null) {
+
+            this.root = new Node(list.localizarBloco(0).valor);
+            i = 1;
+        }
+
+        for (; i < list.tamanho(); i++) {
 
             Node node = this.localizarNoIncompleto();
 
@@ -254,6 +302,189 @@ public class BTree {
             BTree.printSim(node.right);
 
         }
+
+    }
+
+    public Integer numNo() {
+
+        return BTree.numNo(this.root);
+        
+    }
+
+    private static Integer numNo(Node no) {
+
+        if (no == null) {
+
+            return 0;
+        }
+
+        Integer esq = BTree.numNo(no.left);
+        Integer dir = BTree.numNo(no.right);
+
+        return dir + esq + 1;
+    }
+
+    public ListaG<Node> getArrayNodes(Integer valores[]) {
+
+        ListaG<Node> list = new ListaG<Node>();
+
+        BTree.getArrayNodes(this.root, list, valores);
+
+        return list;
+        
+    }
+
+    private static void getArrayNodes(Node no, ListaG<Node> lista, Integer valores[]) {
+
+        for (int i = 0; i < valores.length; i++) {
+
+            if (valores[i] == no.value) {
+
+                lista.addElemento(no , true);
+            }
+        }
+
+        if (no.left != null) {
+
+            BTree.getArrayNodes(no.left, lista, valores);
+        }
+
+        if (no.right != null) {
+
+            BTree.getArrayNodes(no.right, lista, valores);
+        }
+        
+    }
+
+    public ListaG<Node> getLeaves() {
+
+        ListaG<Node> list = new ListaG<Node>();
+
+        BTree.getLeaves(this.root, list);
+
+        return list;
+
+    }
+
+    public static void getLeaves(Node no, ListaG<Node> list) {
+
+
+
+        if (no.left == null && no.right == null){
+
+            list.addElemento(no, true);
+            return;
+
+        }
+
+        if (no.left != null){
+            BTree.getLeaves(no.left, list);
+        }
+
+        if (no.right != null){
+            BTree.getLeaves(no.right, list);
+        }
+
+        return;
+
+        
+    }
+
+    public void removeNode(Node target) {
+
+        if (target == this.root){
+
+            this.root = null;
+        } else {
+
+            BTree.removeNode(target, this.root);
+
+        }
+        
+    }
+
+    private static void removeNode(Node target, Node no) {
+
+
+        if (no.left != null) {
+
+
+            BTree.removeNode(target, no.left);
+            if (no.left == target) {
+
+                no.left = null;
+
+
+            }
+
+
+        }
+
+        if (no.right != null) {
+
+
+            BTree.removeNode(target, no.right);
+            if (no.right == target){
+
+                no.right = null;
+
+
+            } 
+
+
+        }
+
+
+    }
+
+    public void removeSub(Node ref, Boolean dir) {
+
+        if (dir){
+
+            ref.right = null;
+        } else {
+
+            ref.left = null;
+        }
+        
+    }
+
+    public void concat(BTree tree, Node noReff, Boolean dir) {
+
+        Node end = tree.localizarNoIncompleto();
+
+        if (dir){
+
+
+            if (end.left == null){
+
+                end.left = noReff.right;
+
+            } else if (end.right == null){
+
+
+                end.right = noReff.right;
+            }
+
+            noReff.right = tree.root;
+
+        } else {
+
+
+            if (end.left == null){
+
+                end.left = noReff.left;
+
+            } else if (end.right == null){
+
+
+                end.right= noReff.left;
+            }
+
+            noReff.left = tree.root;
+
+        }
+
 
     }
 

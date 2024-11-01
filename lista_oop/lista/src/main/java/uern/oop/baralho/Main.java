@@ -24,6 +24,7 @@ public class Main
 
 		shufle(jogador1);
 		shufle(jogador2);
+		
 
 		System.out.println("Jogador 1 :");
 		printDeck(jogador1);
